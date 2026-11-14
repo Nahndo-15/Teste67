@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -10,23 +11,18 @@ html {
 }
 
 body {
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-body {
     background-color: black;
     width: 100%;
     min-height: 100vh;
     margin: 0;
-    border: none;
     color: white;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
+
 header {
-   background-color: black;
+    background-color: black;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,10 +36,10 @@ header {
     justify-content: center;
     width: 180px;
     height: 80px;
+    flex-shrink: 0;
 }
 
 .logo-area img {
-    margin-left: 67px;
     width: 180px;
     height: auto;
     object-fit: contain;
@@ -56,7 +52,6 @@ header {
     gap: 45px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
 
 .menu a {
     position: relative;
@@ -79,7 +74,7 @@ header {
 .menu a:hover::after {
     width: 100%;
 }
- 
+
 .principal {
     width: 100%;
 }
@@ -90,7 +85,6 @@ main {
     flex: 1;
     margin: 0 auto;
     padding: 20px 50px;
-    box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
@@ -105,7 +99,7 @@ main {
 }
 
 .titulo {
-    color:white;
+    color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 70px;
     margin-bottom: 30px;
@@ -123,6 +117,7 @@ span {
     font-size: 20px;
 }
 
+/* BOTÕES */
 .botoes {
     display: flex;
     gap: 15px;
@@ -131,7 +126,7 @@ span {
 }
 
 .botao-ideia,
- .botao-projetos {
+.botao-projetos {
     background-color: blue;
     color: white;
     border: none;
@@ -142,11 +137,14 @@ span {
     box-shadow: 0 0 12px darkblue;
     transition: 0.3s ease;
 }
-.botao-servico:hover {
+
+.botao-ideia:hover,
+.botao-projetos:hover {
     background-color: darkblue;
     box-shadow: 0 0 15px blue;
     transform: translateY(-3px);
 }
+
 
 .hero-imagem {
     position: absolute;
@@ -159,9 +157,11 @@ span {
     height: auto;
     object-fit: contain;
 }
+
+
 .rodape {
     width: 100%;
-    background-color:  black;
+    background-color: black;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white;
     font-size: 15px;
@@ -170,32 +170,115 @@ span {
     margin-top: 50px;
 }
 
-
 /* RESPONSIVIDADE PARA CELULARES */
 @media (max-width: 768px) {
 
-    /* Textos */
-    h1 {
-        font-size: 28px;
+    /* CABEÇALHO */
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px 20px;
     }
 
-    h2 {
-        font-size: 24px;
-    }
-
-    p {
-        font-size: 15px;
-    }
-
-    /* Imagens */
-    img {
-        max-width: 100%;
+    /* LOGO */
+    .logo-area {
+        width: 100%;
         height: auto;
     }
 
-    /* Seções */
-    section {
-        padding: 30px 20px;
+    .logo-area img {
+        width: 150px;
+        margin-left: 0;
     }
 
+    /* MENU */
+    .menu {
+        flex-wrap: wrap;
+        gap: 20px;
+        font-size: 14px;
+    }
+
+    /* CONTEÚDO */
+    main {
+        width: 100%;
+        padding: 30px 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .subtitulo {
+        margin-left: 0;
+        font-size: 16px;
+    }
+
+    .titulo {
+        font-size: clamp(32px, 8vw, 45px);
+        margin-bottom: 20px;
+    }
+
+    span {
+        font-size: inherit;
+    }
+
+    .para {
+        font-size: 16px;
+    }
+
+    /* BOTÕES */
+    .botoes {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 30px 0;
+    }
+
+    .botao-ideia,
+    .botao-projetos {
+        font-size: 16px;
+        padding: 12px 18px;
+    }
+
+    /* IMAGEM */
+    .hero-imagem {
+        position: static;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .hero-imagem img {
+        width: min(80%, 280px);
+    }
+
+    /* RODAPÉ */
+    .rodape {
+        margin-top: 20px;
+        padding: 20px 10px;
+        font-size: 13px;
+    }
+}
+
+/* TELAS MUITO PEQUENAS */
+@media (max-width: 380px) {
+
+    .menu {
+        gap: 12px;
+        font-size: 13px;
+    }
+
+    .titulo {
+        font-size: 30px;
+    }
+
+    .botoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botao-ideia,
+    .botao-projetos {
+        width: 100%;
+        max-width: 230px;
+    }
 }
