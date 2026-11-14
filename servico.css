@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+
+body {
+    background-color: black;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    border: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+header {
+   background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 20px 50px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 80px;
+}
+
+.logo-area img {
+    margin-left: 67px;
+    width: 180px;
+    height: auto;
+    object-fit: contain;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.menu a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: blue;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+ 
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.servicos {
+    padding: 70px 10%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.introducao {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.titulo {
+    font-size: 42px;
+    margin-bottom: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.introducao p {
+    color: black;
+    font-size: 17px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Cards */
+
+.lista-servicos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card-servico {
+    background-color: rgb(35, 34, 35);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #414141;
+    transition: 0.3s;
+}
+
+.card-servico:hover {
+    transform: translateY(-4px);
+    border-color: blue;
+}
+
+.card-servico h2 {
+    color: blue;
+    margin-bottom: 15px;
+}
+
+.card-servico p {
+    color: #c5c5c5;
+    line-height: 1.6;
+}
+
+.rodape {
+    text-align: center;
+    padding: 25px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/* RESPONSIVIDADE PARA CELULARES */
+@media (max-width: 768px) {
+
+    /* Textos */
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    /* Imagens */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Seções */
+    section {
+        padding: 30px 20px;
+    }
+
+}
